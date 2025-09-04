@@ -19,6 +19,21 @@ class Signin extends StatelessWidget {
                 sub_title:
                     "Enter your email & password to securely access your account and enjoy a personalized shopping experience.",
               ),
+              SizedBox(height: 35),
+              TextField(
+                
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(25),
+                    borderSide: BorderSide.none,
+                  ),
+                  hintText: "Email",
+                  prefixIcon: Icon(Icons.email),
+                 filled: true,
+                 fillColor: Colors.white,
+                 isDense: true
+                ),
+              ),
             ],
           ),
         ),
