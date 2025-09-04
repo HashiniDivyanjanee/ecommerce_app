@@ -1,4 +1,5 @@
-import 'package:ecommerce_app/features/banner_slider/presentation/page/banner_slider.dart';
+import 'package:ecommerce_app/core/constants/colors/app_colors.dart';
+import 'package:ecommerce_app/features/auth/ui/signIn.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,9 +14,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        scaffoldBackgroundColor: AppColors.bgColor,
       ),
-      home: BannerSlider(),
+      home: Signin(),
     );
   }
 }
