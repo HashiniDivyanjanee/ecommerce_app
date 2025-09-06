@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/constants/style/text_style.dart';
 import 'package:flutter/material.dart';
 
 class TextFieldWidget extends StatelessWidget {
@@ -20,6 +21,7 @@ class TextFieldWidget extends StatelessWidget {
           borderSide: BorderSide.none,
         ),
         hintText: hintText,
+        hintStyle: AppTextStyle.SubTitle,
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         filled: true,

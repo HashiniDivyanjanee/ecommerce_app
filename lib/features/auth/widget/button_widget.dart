@@ -1,18 +1,21 @@
 
+import 'package:ecommerce_app/core/constants/colors/app_colors.dart';
+import 'package:ecommerce_app/core/constants/style/text_style.dart';
 import 'package:flutter/material.dart';
 
 class ButtonWidget extends StatelessWidget {
+  final String buttonName;
   const ButtonWidget({
-    super.key,
+    super.key, required this.buttonName,
   });
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: const Color.fromARGB(255, 127, 243, 177),
-        shadowColor: const Color.fromARGB(255, 255, 255, 255),
-        foregroundColor: Colors.white,
+        backgroundColor: AppColors.buttonBgColor,
+        shadowColor: AppColors.buttonTextColor,
+        foregroundColor: AppColors.buttonTextColor,
         minimumSize: Size(double.infinity, 50),
         elevation: 10,
         shape: RoundedRectangleBorder(
@@ -20,7 +23,7 @@ class ButtonWidget extends StatelessWidget {
         ),
       ),
       onPressed: () {},
-      child: Text('Log In'),
+      child: Text(buttonName,style: AppTextStyle.ButtonInText,),
     );
   }
 }

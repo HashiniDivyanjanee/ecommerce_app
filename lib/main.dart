@@ -1,5 +1,5 @@
+import 'package:ecommerce_app/app/routes/app_route_generator.dart';
 import 'package:ecommerce_app/core/constants/colors/app_colors.dart';
-import 'package:ecommerce_app/features/auth/ui/signIn.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,12 +11,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: AppColors.bgColor,
-      ),
-      home: Signin(),
+      theme: ThemeData(scaffoldBackgroundColor: AppColors.bgColor),
+      routerConfig: goRoute,
     );
   }
 }
