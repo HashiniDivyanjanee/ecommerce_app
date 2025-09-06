@@ -5,13 +5,20 @@ import 'package:flutter/widgets.dart';
 class AppTextStyle {
   static TextStyle title = TextStyle(
     fontFamily: AppFont.ptSans,
-    fontSize: 25,
+    fontSize: 30,
     fontWeight: FontWeight.bold,
   );
 
   static TextStyle SubTitle = TextStyle(
     fontFamily: AppFont.ptSans,
     fontSize: 12,
-    color: AppColors.subTitleTextColor
+    color: AppColors.subTitleTextColor,
+  );
+
+  static TextStyle TextButton = TextStyle(
+    fontFamily: AppFont.ptSans,
+    fontSize: 14,
+    fontWeight: FontWeight.bold,
+    color: AppColors.subTitleTextColor,
   );
 }
