@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 
 class ButtonWidget extends StatelessWidget {
   final String buttonName;
+  final VoidCallback onPressed;
   const ButtonWidget({
-    super.key, required this.buttonName,
+    super.key, required this.buttonName, required this.onPressed,
   });
 
   @override
@@ -22,7 +23,7 @@ class ButtonWidget extends StatelessWidget {
           borderRadius: BorderRadiusGeometry.circular(25),
         ),
       ),
-      onPressed: () {},
+      onPressed: onPressed,
       child: Text(buttonName,style: AppTextStyle.ButtonInText,),
     );
   }
