@@ -129,6 +129,7 @@ class _HomeState extends State<Home> {
                     itemCount: offers.length,
                     itemBuilder: (context, index) {
                       return ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
                         child: Image.asset(offers[index], fit: BoxFit.cover),
                       );
                     },
