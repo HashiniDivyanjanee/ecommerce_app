@@ -4,7 +4,7 @@ import 'package:ecommerce_app/features/auth/widget/button_widget.dart';
 import 'package:ecommerce_app/features/auth/widget/checkbox_widget.dart';
 import 'package:ecommerce_app/features/comm%20widget/icon_button_widget.dart';
 import 'package:ecommerce_app/features/auth/widget/sub_title.dart';
-import 'package:ecommerce_app/features/auth/widget/text_button_widget.dart';
+import 'package:ecommerce_app/features/comm%20widget/text_button_widget.dart';
 import 'package:ecommerce_app/features/comm%20widget/text_field_widget.dart';
 import 'package:ecommerce_app/features/auth/widget/title_widget.dart';
 import 'package:flutter/material.dart';

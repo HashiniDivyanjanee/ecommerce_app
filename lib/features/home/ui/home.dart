@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:ecommerce_app/core/constants/colors/app_colors.dart';
 import 'package:ecommerce_app/core/constants/style/text_style.dart';
 import 'package:ecommerce_app/features/comm%20widget/icon_button_widget.dart';
+import 'package:ecommerce_app/features/comm%20widget/text_button_widget.dart';
 import 'package:ecommerce_app/features/comm%20widget/text_field_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -32,6 +33,15 @@ class _HomeState extends State<Home> {
     'assets/images/b3.jpg',
   ];
 
+  final List<Map<String, dynamic>> items = [
+    {'name': 'Banana', 'price': 'Rs.120.00', 'image': 'assets/images/i1.jpg'},
+    {'name': 'Banana', 'price': 'Rs.120.00', 'image': 'assets/images/i2.jpg'},
+    {'name': 'Banana', 'price': 'Rs.120.00', 'image': 'assets/images/i3.jpeg'},
+    {'name': 'Banana', 'price': 'Rs.120.00', 'image': 'assets/images/i4.jpg'},
+    {'name': 'Banana', 'price': 'Rs.120.00', 'image': 'assets/images/i5.jpg'},
+    {'name': 'Banana', 'price': 'Rs.120.00', 'image': 'assets/images/i2.jpg'},
+  ];
+
   @override
   void initState() {
     super.initState();
@@ -53,9 +63,21 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: AppColors.buttonBgColor,
+        backgroundColor: AppColors.buttonBgColor ,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home,color: AppColors.buttonTextColor,), label: 'Home',),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite,color: AppColors.buttonTextColor,), label: 'Favorite'),
+          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart,color: AppColors.buttonTextColor,), label: 'Cart'),
+          BottomNavigationBarItem(icon: Icon(Icons.edit_document,color: AppColors.buttonTextColor,), label: 'Orders'),
+          BottomNavigationBarItem(icon: Icon(Icons.person,color: AppColors.buttonTextColor,), label: 'Account'),
+        ],
+      ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.only(top: 40, right: 20, left: 20),
+          padding: const EdgeInsets.only(top: 40, right: 15, left: 15),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -79,7 +101,10 @@ class _HomeState extends State<Home> {
                       ],
                     ),
                     IconButtonWidget(
-                      icon: Icon(Icons.notifications),
+                      icon: Icon(
+                        Icons.notifications,
+                        color: AppColors.buttonBgColor,
+                      ),
                       onPressed: () {},
                     ),
                   ],
@@ -134,6 +159,65 @@ class _HomeState extends State<Home> {
                       );
                     },
                   ),
+                ),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('Popular Items', style: AppTextStyle.TitleText),
+                    TextButtonWidget(buttonName: 'View all', onPressed: () {}),
+                  ],
+                ),
+                SizedBox(height: 20),
+                GridView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisExtent: 280,
+                    crossAxisSpacing: 12,
+                    mainAxisSpacing: 12,
+                  ),
+                  itemCount: items.length,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: AppColors.buttonTextColor,
+                        boxShadow: [
+                          BoxShadow(
+                            blurRadius: 5,
+                            spreadRadius: 1,
+                            color: Colors.black12,
+                          ),
+                        ],
+                      ),
+
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(items[index]['image']),
+                          Text(
+                            items[index]['name'],
+                            style: AppTextStyle.TextButton,
+                          ),
+                          Text(
+                            items[index]['price'],
+                            style: TextStyle(color: AppColors.buttonBgColor),
+                          ),
+                          Spacer(),
+                          Align(
+                            alignment: Alignment.bottomRight,
+                            child: CircleAvatar(
+                              backgroundColor: AppColors.buttonBgColor,
+                              child: Icon(Icons.add, color: Colors.white),
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
                 ),
               ],
             ),

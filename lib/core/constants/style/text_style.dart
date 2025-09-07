@@ -1,5 +1,4 @@
 import 'package:ecommerce_app/core/constants/colors/app_colors.dart';
-import 'package:ecommerce_app/core/constants/font/app_font.dart';
 import 'package:flutter/widgets.dart';
 
 class AppTextStyle {
@@ -31,5 +30,11 @@ class AppTextStyle {
   static TextStyle NormalText = TextStyle(
     // fontFamily: AppFont.ptSans,
     fontSize: 14,
+  );
+
+  static TextStyle TitleText = TextStyle(
+    // fontFamily: AppFont.ptSans,
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
   );
 }
